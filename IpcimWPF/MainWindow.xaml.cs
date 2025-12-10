@@ -45,7 +45,20 @@ namespace IpcimWPF
 
         private void Bevitel(object sender, RoutedEventArgs e)
         { 
-            
+            string domainName;
+            string ipAddress;
+
+            if(txtDomainName.Text.Length > 0 && txtIpAddress.Text.Length > 0)
+            {
+                domainName = txtDomainName.Text;
+                ipAddress = txtIpAddress.Text;
+                adatokLista.Add(new Adatok(domainName, ipAddress));
+                dataGrid.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Kérem töltse ki az összes mezőt!");
+            }
         }
 
         private void Mentes(object sender, RoutedEventArgs e)
