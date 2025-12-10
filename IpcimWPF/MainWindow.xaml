@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IpcimWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="IpcimWPF" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGrid" Grid.Column="0">
+            
+        </DataGrid>
+        <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+            <Label Content="Domain-name:" Margin="10" Width="200"/>
+            <TextBox x:Name="txtDomainName" Width="200" Margin="0,0,0,10"/>
+            <Label Content="IP cím:" Margin="10" Width="200"/>
+            <TextBox x:Name="txtIpAddress" Width="200" Margin="0,0,0,10"/>
+            <Button Content="Bevitel" Click="Bevitel" Width="100" Margin="10"/>
+            <Button Content="Mentés" Click="Mentes" Width="100" Margin="10"/>
+            
+        </StackPanel>
 
     </Grid>
 </Window>
