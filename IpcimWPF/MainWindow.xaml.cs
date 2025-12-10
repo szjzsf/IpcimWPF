@@ -63,7 +63,27 @@ namespace IpcimWPF
 
         private void Mentes(object sender, RoutedEventArgs e)
         {
+            if (adatokLista == null)
+            {
+                MessageBox.Show("Nincs menteni való adat!");
+            }
+            string fajlba = "";
+            string fajl = "C:\\Users\\Szalonna József\\source\\repos\\IpcimWPF\\IpcimWPF\\csudh.txt";
 
+            foreach (var item in adatokLista)
+            {
+                fajlba += item.DomainName + ";" + item.IpAddress + "\n";
+            }
+            try
+            {
+                File.WriteAllText(fajl, fajlba);
+                MessageBox.Show("Sikeres mentés!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba a mentés során: " + ex.Message);
+            }
+            File.WriteAllText(fajl, fajlba); 
         }
     }
 }
